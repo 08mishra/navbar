@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .navbar {
+     padding: 20px;
+     /* height: 120px; */
+     width: 100vw;
+     background: rgb(119, 182, 211);
+     color: white;
+     font-weight: 600;
+     overflow: hidden;
+     position: fixed;
+     z-index: 5;
+ }
+ 
+ .navbar #logo {
+     float: left;
+     padding: 10px;
+ }
+ 
+ .navbar #right {
+     float: right;
+     padding: 10px;
+ }
+ 
+ .navbar a {
+     text-decoration: none;
+     letter-spacing: 0.5px;
+     padding: 10px;
+     color: rgb(0, 0, 0);
+     font-weight: 600;
+     font-size: 15px;
+     display: inline-block;
+ }
+ 
+ .navbar a:hover {
+     color: white;
+ }
+ 
+ #right button {
+     width: 160px;
+     height: 45px;
+     border-radius: 5px;
+     background: rgb(88, 88, 201);
+     color: white;
+     border: none;
+     cursor: pointer;
+ }
+ 
+ #right button:focus {
+     outline: none;
+ }
+ 
+ #bars {
+     display: none;
+ }
+ 
+ @media screen and (max-width:1025px) {
+     .navbar {
+         transition: all 0.2s ease;
+     }
+     .navbar #logo {
+         display: block;
+     }
+     .navbar #right {
+         display: none;
+     }
+     .navbar #bars {
+         display: block;
+         float: right;
+         font-size: 20px;
+     }
+     .navbar.responsive {
+         position: relative;
+     }
+     .navbar.responsive #bars {
+         position: fixed;
+         top: 0;
+         right: 10px;
+     }
+     .navbar.responsive #right {
+         display: block;
+         float: none;
+         transition: all 0.3s ease;
+         text-align: center;
+         overflow: hidden;
+     }
+     .navbar.responsive a {
+         display: block;
+         color: white;
+     }
+ }
